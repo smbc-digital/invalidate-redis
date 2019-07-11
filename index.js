@@ -18,7 +18,6 @@ exports.handler = async (event) => {
         const redisUrl = process.env.REDIS_URL
         const client = await connectToRedis(redisUrl)
         const delAsync = promisify(client.del).bind(client)
-
         await delAsync(parsedRequest.key)
 
         return {
