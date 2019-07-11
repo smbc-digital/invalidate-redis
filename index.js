@@ -19,7 +19,7 @@ exports.handler = async (event) => {
         const client = await connectToRedis(redisUrl)
         const delAsync = promisify(client.del).bind(client)
 
-        await delAsync(parsedRequest.userId)
+        await delAsync(parsedRequest.key)
 
         return {
             statusCode: 200
