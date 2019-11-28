@@ -37,6 +37,12 @@ Example request:
 }
 ```
 
+To manually send a request to trigger a invalidate request, the example request above is required along with a 'Header' value of key 'x-api-key' with the API Gateway key associated with the Enviroment you are targeting.
+
+The API Gateway url is found at: APIs > invalidateRedis > Stages (The url will end with default/invalidaRedis{ENV})
+
+The API Gateway API key is found at within AWS gateway.
+
 Possible responses:
 * __200 OK__: Successfuly deleted the key. Also returned when the key does not exist in the store.
 * __500 Internal Server Error__: Error while carrying out the operation. Contains `error` property. 
