@@ -30,14 +30,7 @@ We needed a simple, standalone solution to invalidate our Redis cache distributi
 ## Usage
 Built to be used with AWS Lambda and API Gateway. 
 
-Example request:
-```json
-{
-  "Key": "your_key"
-}
-```
-
-To manually send a request to trigger a invalidate request, the example request above is required along with a 'Header' value of key 'x-api-key' with the API Gateway key associated with the Enviroment you are targeting.
+To manually send a request to trigger a invalidate request you need to supply a 'Header' value of key 'x-api-key' with the API Gateway key associated with the Enviroment you are targeting.
 
 The API Gateway url is found at: APIs > invalidateRedis > Stages (The url will end with default/invalidaRedis{ENV})
 
